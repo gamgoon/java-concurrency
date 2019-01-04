@@ -64,4 +64,12 @@ public class ConcurrentServer {
         Logger.shutdown();
         System.out.println("Logger ok");
     }
+
+    public static ParallelCache getCache() {
+        return cache;
+    }
+
+    public static ThreadPoolExecutor getExecutor() {
+        return executor;
+    }
 }
