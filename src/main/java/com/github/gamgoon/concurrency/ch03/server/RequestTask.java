@@ -58,11 +58,13 @@ public class RequestTask implements Runnable {
                 }
                 String response = command.execute();
                 System.out.println(response);
+                cache.put(line, response);
+                out.write(response);
             } else {
                 Logger.sendMessage("Command " + line + " was found in the cache");
             }
 
-            System.out.println(ret);
+//            System.out.println(ret);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
