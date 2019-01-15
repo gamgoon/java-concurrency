@@ -73,15 +73,18 @@ public class NewsAdvancedSystem implements Runnable {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+		System.out.println("step 1");
+
 		synchronized (this) {
 			try {
-				wait();
+				System.out.println("wait()");
+				latch.await();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
-		
+
+		System.out.println("step 2");
 		System.out.println("Shutting down the executor.");
 		executor.shutdown();
 		t.interrupt();
@@ -91,6 +94,7 @@ public class NewsAdvancedSystem implements Runnable {
 	}
 	
 	public void shutdown() {
+		System.out.println("latch.countDown");
 		latch.countDown();
 
 	}

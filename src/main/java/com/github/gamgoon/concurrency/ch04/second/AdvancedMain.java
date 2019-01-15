@@ -20,11 +20,12 @@ public class AdvancedMain {
 
 		// Wait 30 minutes
 		try {
-			TimeUnit.MINUTES.sleep(30);
+			System.out.println("sleep 30 seconds");
+			TimeUnit.SECONDS.sleep(10);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-
+		System.out.println("step 3");
 		// Notify the finalization of the System
 		system.shutdown();
 
