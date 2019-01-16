@@ -25,8 +25,7 @@ public class Buffer {
     public void insert(String line) {
         lock.lock();
         try {
-            System.out.printf("%s: insert lock", Thread.currentThread().getName());
-            Thread.sleep(10000);
+            System.out.printf("%s: insert lock\n", Thread.currentThread().getName());
             while (buffer.size() == maxSize) {
                 System.out.printf("%s: spaces.await()\n", Thread.currentThread().getName());
                 spaces.await();
@@ -48,7 +47,6 @@ public class Buffer {
         System.out.printf("%s: in lock\n", Thread.currentThread().getName());
 
         try {
-            Thread.sleep(10000);
             while (buffer.size() == 0 && hasPendingLines()) {
                 System.out.printf("%s: spaces.await()\n", Thread.currentThread().getName());
                 lines.await();
