@@ -52,9 +52,9 @@ public class LineTask extends RecursiveTask<Integer> {
         return counter;
     }
 
-    private Integer groupResults(Integer number1,Integer number2) {
+    private Integer groupResults(Integer number1, Integer number2) {
         Integer result;
-        result=number1+number2;
+        result = number1 + number2;
         return result;
     }
 }

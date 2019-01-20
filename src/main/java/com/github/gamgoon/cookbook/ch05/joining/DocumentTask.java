@@ -22,11 +22,14 @@ public class DocumentTask extends RecursiveTask<Integer> {
         Integer result = null;
         if (end - start < 10) {
             result = processLines(document, start, end, word);
+            System.out.printf("%s : result \n", Thread.currentThread().getName());
         } else {
             int mid = (start + end) / 2;
             DocumentTask task1 = new DocumentTask(document, start, mid, word);
             DocumentTask task2 = new DocumentTask(document, mid, end, word);
+            System.out.printf("%s : fork \n", Thread.currentThread().getName());
             invokeAll(task1, task2);
+            System.out.printf("%s : join \n", Thread.currentThread().getName());
             try {
                 result = groupResults(task1.get(), task2.get());
             } catch (InterruptedException | ExecutionException e) {
