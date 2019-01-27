@@ -27,16 +27,16 @@ public class SpliteratorTest {
                 "mi ritroval in una selva oscura" +
                 " ch la dritta via era smarrita ";
 
-        System.out.println("Found " + countWordsIteratively(SENTENCE) + " words");
+//        System.out.println("Found " + countWordsIteratively(SENTENCE) + " words");
+//
+//        Stream<Character> stream = IntStream.range(0, SENTENCE.length())
+//                .mapToObj(SENTENCE::charAt);
+//        System.out.println("Found " + countWord(stream) + " words");
 
-        Stream<Character> stream = IntStream.range(0, SENTENCE.length())
-                .mapToObj(SENTENCE::charAt);
-        System.out.println("Found " + countWord(stream) + " words");
-
-        Stream<Character> stream2 = IntStream.range(0, SENTENCE.length())
-                .mapToObj(SENTENCE::charAt);
-        System.out.println("Found " + countWord(stream2.parallel()) + " words");
-
+//        Stream<Character> stream2 = IntStream.range(0, SENTENCE.length())
+//                .mapToObj(SENTENCE::charAt);
+//        System.out.println("Found " + countWord(stream2.parallel()) + " words");
+//
         Spliterator<Character> spliterator = new WordCounterSpliterator(SENTENCE, 0);
         Stream<Character> stream3 = StreamSupport.stream(spliterator, true);
         System.out.println("Found " + countWord(stream3) + " words");
