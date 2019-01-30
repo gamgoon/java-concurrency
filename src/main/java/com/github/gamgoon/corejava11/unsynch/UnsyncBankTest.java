@@ -1,6 +1,7 @@
 package com.github.gamgoon.corejava11.unsynch;
 
-import com.github.gamgoon.corejava11.threads.Bank;
+
+import com.github.gamgoon.corejava11.synch.Bank;
 
 public class UnsyncBankTest {
     public static final int NACCOUNTS = 100;
