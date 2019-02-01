@@ -1,6 +1,6 @@
 package com.github.gamgoon.corejava11.threads;
 
-import com.github.gamgoon.corejava11.synch.Bank;
+import com.github.gamgoon.corejava11.synch2.Bank;
 
 public class ThreadTest {
     public static final int DELAY = 10;
